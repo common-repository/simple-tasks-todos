@@ -1,0 +1,127 @@
+#ftm{font-family: "Open Sans", sans-serif; font-size:13px; line-height:18px; color:#333;}
+#ftm a{font-weight:normal; text-decoration: none;}
+
+#ftm{position:fixed; bottom:0; right:20px; left:0; z-index: 5000; min-height:25px;}
+#ftm .ftm-handle{position:absolute; bottom:0px; right:0px; cursor:pointer; display:block; box-shadow: 0 1px 1px rgba(34, 34, 34, 0.5); white-space:nowrap; padding:1px 6px 0px 6px; font-size:10px; border-top-left-radius: 3px; border-top-right-radius: 3px; background: #eeb6a7; color: #c5241b; transition:background 1s, color 1s;}
+#ftm .ftm-handle:hover{background: #ee5834; color:#fff;}
+#ftm .ftm-content{position:absolute; bottom:-99999px; right:0px;}
+
+#ftm .ftm-still-loading{display:block; float:right; padding:3px 8px; font-size:12px; background: #d75c4f; color:#fff; font-weight:bold; border-top-left-radius: 3px; border-top-right-radius: 3px; }
+#ftm .ftm-new-task-list{display:block; cursor:pointer; float:right; box-shadow: 0 1px 1px rgba(34, 34, 34, 0.5); margin:10px 5px 0 0; padding:3px 8px; font-size:16px; background: #d75c4f; color:#fff; font-weight:bold; border-top-left-radius: 3px; border-top-right-radius: 3px; }
+#ftm .ftm-new-task-list:hover{background: #ff6b5e;}
+
+a.ftm-button{display:inline-block; font-weight:normal; color:#444; border-radius:3px; cursor:pointer; font-size:13px; height:28px; line-height: 26px; margin:0 0 0 0; padding:0 10px 1px; background:#ddd; border:1px solid #ccc;}
+a.ftm-button:hover{background:#ccc; border-color:#aaa; color:#111;}
+
+.ftm-new-task-list-popup #ftm-new-task-list-label{width:98%;}
+
+.ftm-task-list{float:right; vertical-align: bottom; padding:0 2px; position:relative;}
+.ftm-task-list-handle{display:block; margin-top:10px; white-space:nowrap; z-index:5002; box-shadow: 0 1px 1px rgba(34, 34, 34, 0.5); cursor:pointer; padding:3px 7px 1px 7px; font-size:11px; border-top-left-radius: 3px; border-top-right-radius: 3px; background: #eeb6a7; border:1px 1px 0 1px solid #b6776c; color: #8e251f; transition:background 1s, color 1s;}
+.ftm-task-list-handle:hover{background: #ee5834; color:#fff;}
+.ftm-task-list-handle .active-count{background: #ca6a61; opacity:0.5; transform:background 500ms; color:#fff; font-weight:bold; display:inline-block; border-radius:10px; font-size:7px; padding:0px 7px; margin-left:3px;}
+.ftm-task-list-handle:hover .active-count{background: #aa3f36; opacity:1;}
+.ftm-task-list-content{display:none; box-shadow: 0 1px 1px rgba(34, 34, 34, 0.5); z-index:5001; position:absolute; overflow:hidden; bottom:30px; left:2px; background: #ee7c57; border:2px solid #ee5834; width:300px; border-radius:5px; border-bottom-left-radius:0;}
+.ftm-task-list.x-offset-fix .ftm-task-list-content{right:2px; left:auto; border-bottom-right-radius:0; border-bottom-left-radius:5px;}
+
+.ftm-task-list.showing .ftm-task-list-content{display:block;}
+.ftm-task-list.showing .ftm-task-list-handle{padding:10px 7px 4px 7px; margin-top:0; border-top-left-radius:0; border-top-right-radius:0; background: #ee5834; color:#fff;}
+.ftm-task-list-title{display:block; border-bottom:1px solid #ee5834; padding:10px 10px 6px 10px; font-size:14px; font-weight:bold; color: #5e2617;}
+.ftm-task-list-title a{display:block; opacity:0.5; cursor:pointer; float:right; position:relative; top:-4px; width:24px; height:24px; background:#ee7c57 url(images/pencil.png) no-repeat 4px 4px; border-radius:12px;}
+.ftm-task-list-title a:hover{background-color: #c44b32; opacity:1;}
+.ftm-task-list-completed{text-align: center; font-size:10px; line-height:10px; cursor:pointer; padding:2px; color: #451e12; display:block; background: #ddd; transition:background 500ms;}
+.ftm-task-list-completed:hover{color: #452212; background: #aaa;}
+
+.ftm-new-task-container{max-height:30px; overflow: hidden;}
+.ftm-new-task-creating{padding:4px 4px 4px 40px; font-size:13px !important; line-height:1.4em !important; display:none; margin:0 0 0 0; background:#fff url(images/spinner_striped.gif) no-repeat 6px 4px;}
+.ftm-new-task-error{padding:4px; font-size:13px !important; line-height:1.4em !important; color:red; display:none; margin:0 0 0 0;}
+.ftm-new-task-input{display:block !important; margin:1px !important; font-size:14px; line-height:1.4em; background-color:white !important; padding:3px 10px !important; width:100%; outline:none; border:1px solid #ddd !important; border-bottom-right-radius:3px !important; color:#333;}
+.x-offset-fix .ftm-new-task-input{border-bottom-left-radius:3px !important; border-bottom-right-radius:0 !important;}
+.ftm-new-task-input:focus{outline:0;}
+
+
+.ftm-task-list.creating-task .ftm-new-task-creating{display:block;}
+.ftm-task-list.error-creating-task .ftm-new-task-error{display:block;}
+.ftm-task-list.creating-task .ftm-new-task-input,
+.ftm-task-list.error-creating-task .ftm-new-task-input{display:none;}
+
+.ftm-task-list-content ul{padding:0 0 0 0; margin:0 0 0 0;}
+.ftm-task-list-content li{background:#c75131; position:relative; padding:0 0 0 30px; margin:0 0 1px 0; transition:background 500ms;}
+.ftm-task-list-content li:hover{background: #a8482b;}
+.ftm-task-list-content li .ftm-chk-status{position:absolute; top:5px; left:6px; width:auto; margin:0 0 0 0; padding:0 0 0 0;}
+.ftm-task-list-content li a{display:block; padding:3px 10px; cursor:pointer; background:#f3f3f3; color:#333; transition:background 500ms, color 500ms;}
+.ftm-task-list-content li a:hover{background: #f3ddb7; color: #8e3721;}
+.ftm-task-list-content li.status-2{background: #ccc;}
+.ftm-task-list-content li.status-2:hover{background: #aaa;}
+.ftm-task-list-content li.status-2 a{color: #777;}
+.ftm-task-list-content li.status-2 a:hover{color: #555;}
+.ftm-task-list-content li.status-2 .ftm-chk-status{opacity:0.8;}
+
+
+.ftm-task-list-content li.busy{background-image:url(images/spinner_striped.gif); background-repeat:no-repeat; background-position:6px 4px;}
+.ftm-task-list-content li.busy .ftm-chk-status{display:none;}
+.ftm-task-list-content li.deleting a{text-decoration: line-through;}
+
+/*
+.ftm-task-list-content li .task-options{display:block; padding:4px 5px 0 5px; text-align: right; background:#ccc;}
+.ftm-task-list-content li .task-options a{display:inline-block; border-radius:7px; font-size:11px; line-height:9px; background: #c78c7b; margin-left:6px; padding:0; overflow:hidden; transform:background 500ms;}
+.ftm-task-list-content li .task-options a:hover{background: #a23f33;}
+.ftm-task-list-content li .task-options a span{display:inline-block; padding:3px 9px 3px 5px; font-size:11px; line-height:9px;}
+.ftm-task-list-content li .task-options a span.icon{background: #c35244;}
+.ftm-task-list-content li .task-options a:hover span{color:#fff;}
+.ftm-task-list-content li .task-options a:hover span.icon{background: #5d0f0f;}
+*/
+
+/* Modal windows */
+.ftm-modal-overlay{position:fixed; top:0px; left:0px; bottom:0px; right:0px; display:table; width:100%; height:100%; background:rgba(255, 255, 255, 0.8); z-index:99101;}
+.ftm-modal-overlay-inner{display:table-cell; vertical-align:middle;}
+
+.ftm-modal-window{z-index:99102; background-color:#ee7c57; border:3px solid #ee5834; padding:2px; margin:auto; position:relative; border-radius:5px; font-family: "Open Sans", sans-serif; font-size:13px; line-height:18px; color:#444;}
+.ftm-modal-content-wrapper{overflow:hidden;}
+.scroll .ftm-modal-content-wrapper{overflow-y:scroll;}
+.ftm-modal-content{border:1px solid #ee5834; padding:10px; background:#fff; position:relative; border-radius:4px; overflow:hidden;}
+
+.ftm-modal-cancel{margin-left:10px;}
+.ftm-modal-title{padding:7px 20px 10px 15px; font-family: "Open Sans", sans-serif; margin:0 0 0 0; font-size:1.3em; font-weight:600; color:#444; line-height:1.4em;}
+.ftm-modal-close{position:absolute; cursor:pointer; top:-1px; right:15px; display:block; background: #a54437; color:#fff; text-align:center; font-weight:bold; opacity:0.5; padding:3px 10px 3px 10px;}
+.ftm-modal-close:hover{opacity:0.7;}
+
+.ftm-modal-buttons{background:#f3f3f3; border-top:1px solid #eaeaea; text-align:right; margin:15px -10px -10px -10px; padding:0px 15px;}
+.ftm-modal-buttons .ftm-button, .ftm-modal-buttons button{display:inline-block; margin:7px 0 7px 7px;}
+
+.ftm-modal-content p{vertical-align: top;}
+
+.ftm-modal-prompt-overlay, .ftm-modal-confirm-overlay{z-index:99111;}
+.ftm-modal-prompt-window, .ftm-modal-confirm-window{z-index:99112;}
+
+.ftm-message{display:block; padding:10px 10px 10px 40px; background:url(images/knob_message.png) no-repeat;}
+.ftm-message.ftm-error{background-image:url(images/knob_attention.png); color: #651a1e;}
+.ftm-message.ftm-success{background-image:url(images/knob_success.png); color: #105107;}
+.ftm-loading{padding:12px 10px 12px 60px; color:#777; background:url(images/spinner_big.gif) no-repeat;}
+
+.ftm-delete-task{background: #ffccc6 !important; border-color: #e28174 !important; position:absolute; left:10px; color: #910000;}
+.ftm-delete-task:hover{background: #ffb1a6 !important; border-color: #e27268 !important;}
+
+/* Modal windows: form items */
+.ftm-form-item{display:block; padding:5px 0 3px 120px; position: relative;}
+.ftm-form-item label{position:absolute; top:3px; left:0; width:110px; display:block;}
+.ftm-form-item input[type=text]{width:95%; position:relative; top:0;}
+
+.ftm-form-item.edit{padding:1px 0 1px 120px;}
+.ftm-form-item label{top:5px;}
+
+.ftm-inline-edit-handle{display:block; opacity:0.5; cursor:pointer; float:right; position:relative; top:-4px; width:24px; height:24px; background:#ee7c57 url(images/pencil.png) no-repeat 4px 4px; border-radius:12px;}
+.ftm-inline-edit-handle:hover{background-color: #c44b32; opacity:1;}
+
+
+/* Task list; completed tasks */
+.ftm-task-list ul.completed li.loading{background:#ddd; position:relative; padding:3px 10px 3px 40px; margin:0; border-top:1px solid #ccc;}
+.ftm-task-list ul.completed li.loading span{display:block; position:absolute; width:30px; top:0; left:0; bottom:0; background:#aaa url(images/spinner_striped.gif) no-repeat 6px 4px;}
+
+.ftm-task-list ul.completed li.empty{background:#ddd; position:relative; padding:3px 10px 3px 40px; margin:0; border-top:1px solid #ccc;}
+.ftm-task-list ul.completed li.empty span{display:block; position:absolute; width:30px; top:0; left:0; bottom:0; background:#aaa url(images/information.png) no-repeat 6px 4px;}
+
+/* List navigation (prev|next) */
+#ftm-list-nav{display:block; position:absolute; bottom:0; right:-17px; width:15px;}
+#ftm-list-nav a{display:inline-block; margin-right:5px; cursor:pointer; font-size:16px; padding:0 4px 2px 4px; font-weight:bold; color:#d75c4f; border-radius:10px; transition:background 500ms, color 500ms;}
+#ftm-list-nav a:hover{background:#d75c4f; color: #fff1fd;}
+
